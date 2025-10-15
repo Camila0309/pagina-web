@@ -11,10 +11,11 @@ Características:
 Cómo usar:
 1. Abre `index.html` en tu navegador (doble clic o desde VS Code con Live Server).
 2. Haz clic en "Agregar al carrito" para añadir productos. El carrito actualizará el conteo.
-3. En la sección de Checkout ingresa el número de WhatsApp con código de país (ej. +573001112223) y presiona "Enviar pedido por WhatsApp".
+3. En la sección de Checkout verás el número fijo de WhatsApp de la tienda. Presiona "Enviar pedido por WhatsApp" para abrir WhatsApp con el pedido prellenado.
 
 Personalización rápida:
 - Cambia los productos en `app.js` modificando el array `products`.
+- Para cambiar el número de WhatsApp de la tienda edita la constante `STORE_WHATSAPP` en `app.js`.
 - Reemplaza las imágenes SVG en `images/` por las que prefieras.
 
 Notas:

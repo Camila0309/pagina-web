@@ -110,13 +110,11 @@ function changeQty(id, delta){
   renderCheckout();
 }
 
-// WhatsApp handler (mejor codificado)
+// Número de WhatsApp fijo de la tienda (cámbialo aquí si es necesario)
+const STORE_WHATSAPP = '+573001112223';
+
+// WhatsApp handler (usa número fijo)
 document.getElementById('open-whatsapp').addEventListener('click', ()=>{
-  const number = document.getElementById('whatsapp-number').value.trim();
-  if(!/^[+]?\d{7,}$/.test(number)){
-    alert('Por favor ingresa un número válido con código de país, por ejemplo +573001112223');
-    return;
-  }
   const items = Object.values(state.cart);
   if(items.length === 0){
     alert('El carrito está vacío. Agrega productos antes de enviar.');
@@ -131,7 +129,7 @@ document.getElementById('open-whatsapp').addEventListener('click', ()=>{
   });
   message += `%0ATotal: $${formatPrice(total)}`;
 
-  const phone = number.replace(/[+\s]/g, '');
+  const phone = STORE_WHATSAPP.replace(/[+\s]/g, '');
   const encoded = encodeURIComponent(message);
   const url = `https://wa.me/${phone}?text=${encoded}`;
   window.open(url, '_blank');
