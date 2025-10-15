@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tienda Electrónica - Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="images/headphones.svg" alt="logo" class="brand-logo" />
+      <div>
+        <h1>Tienda Electrónica</h1>
+        <p class="tag">Lo último en tecnología</p>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="search">
+        <input id="search" placeholder="Buscar productos..." />
+      </div>
+      <button id="open-cart" class="cart-btn">
+        <span class="icon">🛒</span>
+        <span id="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="products" id="products" aria-label="Listado de productos"></section>
+
+    <div class="checkout-panel" id="checkout-panel" aria-hidden="true">
+      <div class="checkout-header">
+        <h2>Tu pedido</h2>
+        <button id="close-checkout">✕</button>
+      </div>
+      <div class="checkout-body">
+        <div id="checkout-items" class="checkout-items"></div>
+      </div>
+      <div class="checkout-footer">
+        <div class="checkout-total">Total: $<span id="checkout-total">0.00</span></div>
+        <input id="whatsapp-number" class="whatsapp-input" placeholder="+573001112223" value="+57" />
+        <button id="open-whatsapp" class="whatsapp-btn">Enviar por WhatsApp</button>
+      </div>
+    </div>
+  </main>
+
+  <template id="product-template">
+    <article class="product">
+      <div class="product-image"></div>
+      <h3 class="product-title"></h3>
+      <p class="product-price"></p>
+      <button class="add-to-cart">Agregar al carrito</button>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
